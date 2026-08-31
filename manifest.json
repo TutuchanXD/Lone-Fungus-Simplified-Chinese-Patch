@@ -1,0 +1,22 @@
+{
+  "patchVersion": "0.1.0-preview.1",
+  "steamAppId": 1674780,
+  "gameVersion": "1.1.14",
+  "fusionBuild": 295,
+  "source": {
+    "file": "Lone Fungus.dat",
+    "size": 613928694,
+    "sha256": "3D393F2160A5868B51AB07F5EEE246EBF297151F9C841C3AF3F300B2B0818FDB"
+  },
+  "target": {
+    "file": "Lone Fungus.dat",
+    "size": 618844371,
+    "sha256": "7FB74B7E333B4B274038678D68BA23138A89CB7CC56D5938DAB698470EFB48EA"
+  },
+  "patch": {
+    "file": "LoneFungus.zh-CN.v0.1.0-preview.1.zstpatch",
+    "size": 98132044,
+    "sha256": "FE7E5EAAFE02A64B7F3148CB0C83ECD4462C59CB3503769CDB09E9342761CAFF",
+    "format": "Zstandard patch-from"
+  }
+}

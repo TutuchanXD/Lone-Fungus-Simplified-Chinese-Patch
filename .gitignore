@@ -1,0 +1,9 @@
+_vendor/
+_work/
+dist/
+*.dat
+*.bak
+*.tmp
+*.zip
+*.zstpatch
+zstd.exe
