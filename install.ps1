@@ -1,9 +1,14 @@
 [CmdletBinding()]
 param(
-    [string]$GameDirectory = $PSScriptRoot
+    [string]$GameDirectory
 )
 
 $ErrorActionPreference = 'Stop'
+
+# Windows PowerShell 5.1 initializes $PSScriptRoot after -File parameter binding.
+if ([string]::IsNullOrWhiteSpace($GameDirectory)) {
+    $GameDirectory = $PSScriptRoot
+}
 
 $SourceHash = '3D393F2160A5868B51AB07F5EEE246EBF297151F9C841C3AF3F300B2B0818FDB'
 $TargetHash = '7FB74B7E333B4B274038678D68BA23138A89CB7CC56D5938DAB698470EFB48EA'
