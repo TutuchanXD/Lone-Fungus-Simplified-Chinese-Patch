@@ -6,7 +6,9 @@
 
 ## 当前状态
 
-版本：`v0.1.0-preview.1`
+版本：`v0.1.0-preview.2`（安装器修复版）
+
+本版修复 Windows PowerShell 5.1 下双击 `install.cmd`、`uninstall.cmd` 时的默认路径错误，沿用 preview.1 的差分补丁和目标 DAT。玩家反馈的中文方框字仍未解决，继续在 [Issue #1](https://github.com/TutuchanXD/Lone-Fungus-Simplified-Chinese-Patch/issues/1) 跟踪。
 
 适配环境：
 
@@ -26,6 +28,7 @@
 
 尚未完成：
 
+- 部分玩家遇到的中文方框字问题仍在调查，本版不包含字体或游戏资源修复。
 - 部分设置页、背包页签、返回/助手模式等烘焙图片仍为韩文。
 - 当前译文属于第一轮完整文本回填，仍需长期游戏测试来发现语境、换行、裁切和术语问题。
 
@@ -33,10 +36,20 @@
 
 1. 在 Steam 中右键游戏，选择“管理” -> “浏览本地文件”。
 2. 退出游戏，并确保任务管理器中没有 `Lone Fungus.exe`。
-3. 从 [Releases](https://github.com/TutuchanXD/Lone-Fungus-Simplified-Chinese-Patch/releases) 下载 `Lone-Fungus-Simplified-Chinese-Patch-v0.1.0-preview.1.zip`。
+3. 从 [v0.1.0-preview.2 发布页](https://github.com/TutuchanXD/Lone-Fungus-Simplified-Chinese-Patch/releases/tag/v0.1.0-preview.2) 下载 `Lone-Fungus-Simplified-Chinese-Patch-v0.1.0-preview.2.zip`，不要下载 GitHub 自动生成的 `Source code` 压缩包；源码包不含差分补丁和 `zstd.exe`。
 4. 将 ZIP 内的全部文件解压到游戏目录，也就是与 `Lone Fungus.exe`、`Lone Fungus.dat` 同一目录。
 5. 双击 `install.cmd`，等待窗口显示 `[OK] Installation completed successfully.`。
 6. 从 Steam 正常启动游戏。
+
+**已有 preview.1：**退出游戏后，将新版 ZIP 全部解压并覆盖同名补丁文件，再运行 `install.cmd`。保留现有的 `Lone Fungus.dat` 和 `Lone Fungus.dat.lf-zh-cn.original.bak`，无需先卸载。若 DAT 已是相同的中文目标，安装器会提示已安装；更新后的卸载入口仍可使用。包内差分文件名保留 `preview.1` 是因为其内容未变。
+
+发布页同时提供同名 `.zip.sha256` 文件。下载后可在 PowerShell 中运行：
+
+```powershell
+Get-FileHash '.\Lone-Fungus-Simplified-Chinese-Patch-v0.1.0-preview.2.zip' -Algorithm SHA256
+```
+
+将输出与 `.zip.sha256` 中的值比较，确认一致后再解压。
 
 安装器会执行以下保护措施：
 
@@ -84,7 +97,7 @@
 
 ## 校验值
 
-Release ZIP 内附 `CHECKSUMS.sha256`。核心文件如下：
+Release ZIP 内附 `CHECKSUMS.sha256`，列出包内各文件的校验值；外部 `.zip.sha256` 校验整个 ZIP。核心文件如下（preview.2 沿用 preview.1 的游戏资源）：
 
 | 文件 | SHA-256 |
 | --- | --- |
@@ -103,6 +116,10 @@ Release ZIP 内附 `CHECKSUMS.sha256`。核心文件如下：
 - `Get-FileHash '.\Lone Fungus.dat' -Algorithm SHA256` 的输出。
 
 不要上传游戏 DAT、存档或其他完整游戏资源。
+
+## 维护与发布
+
+打包步骤及发布前检查见 [发布指南](docs/RELEASING.md)。安装器回归依据和本版验证边界见 [preview.2 验证记录](docs/RELEASE_VALIDATION_v0.1.0-preview.2.md)。
 
 ## 致谢
 
