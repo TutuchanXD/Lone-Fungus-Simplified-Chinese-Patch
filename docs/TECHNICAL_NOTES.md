@@ -1,6 +1,8 @@
 # DAT 汉化技术说明
 
-本文记录当前 `v0.1.0-preview.1` 的可复现技术基线、Clickteam Fusion DAT 写回约束和验证结果。这里不提供完整游戏资源，也不包含可独立重建游戏内容的原始 DAT。
+本文记录 `v0.1.0-preview.1` 与 `v0.1.0-preview.2` 共用的 DAT 技术基线、Clickteam Fusion DAT 写回约束和既有验证结果。preview.2 仅更新安装器及发布文档，差分补丁和目标 DAT 未变。这里不提供完整游戏资源，也不包含可独立重建游戏内容的原始 DAT。
+
+preview.2 的安装器回归依据、打包检查及未重跑项目见 [验证记录](RELEASE_VALIDATION_v0.1.0-preview.2.md)。中文方框字问题仍在 Issue #1 跟踪，尚无已确认的根因或修复。
 
 ## 输入与输出
 
